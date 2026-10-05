@@ -9,7 +9,7 @@
   <meta name="description" content="A keyboard-driven drum kit with polyphonic playback and a beat recorder.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/drum.css">
-  <script type="module" src="js/input.js"></script>
+  <script type="module" src="js/app.js"></script>
 </head>
 <body>
   <main>
@@ -29,6 +29,14 @@
       <button class="pad" type="button" data-key="KeyD" data-sound="hihat"><kbd>D</kbd><span>Hi-hat</span></button>
       <button class="pad" type="button" data-key="KeyF" data-sound="clap"><kbd>F</kbd><span>Clap</span></button>
     </div>
+
+    <div class="controls">
+      <button id="rec-start" type="button">Record</button>
+      <button id="rec-stop" type="button">Stop</button>
+      <button id="rec-play" type="button">Play</button>
+    </div>
+
+    <p id="rec-status" class="status" role="status" aria-live="polite">Ready</p>
 
     <audio data-sound="kick"  src="sounds/kick.wav"  preload="auto"></audio>
     <audio data-sound="snare" src="sounds/snare.wav" preload="auto"></audio>
