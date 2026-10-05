@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self'; media-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drum Kit</title>
+  <meta name="description" content="A keyboard-driven drum kit with polyphonic playback and a beat recorder.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/drum.css">
+</head>
+<body>
+  <main>
+    <h1>Drum Kit</h1>
+    <p>Press <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> <kbd>F</kbd> or click a pad.</p>
+
+    <!--
+      CONTRACT (the single source of truth for input -> sound)
+      - data-key   : KeyboardEvent.code that triggers the pad (e.g. KeyA)
+      - data-sound : name of the matching <audio data-sound="..."> element
+      - JavaScript must NEVER hardcode a key or a sound name.
+      To rebind a key, edit data-key here. Nothing else changes.
+    -->
+    <div class="pads">
+      <button class="pad" type="button" data-key="KeyA" data-sound="kick"><kbd>A</kbd><span>Kick</span></button>
+      <button class="pad" type="button" data-key="KeyS" data-sound="snare"><kbd>S</kbd><span>Snare</span></button>
+      <button class="pad" type="button" data-key="KeyD" data-sound="hihat"><kbd>D</kbd><span>Hi-hat</span></button>
+      <button class="pad" type="button" data-key="KeyF" data-sound="clap"><kbd>F</kbd><span>Clap</span></button>
+    </div>
+
+    <audio data-sound="kick"  src="sounds/kick.wav"  preload="auto"></audio>
+    <audio data-sound="snare" src="sounds/snare.wav" preload="auto"></audio>
+    <audio data-sound="hihat" src="sounds/hihat.wav" preload="auto"></audio>
+    <audio data-sound="clap"  src="sounds/clap.wav"  preload="auto"></audio>
+  </main>
+</body>
+</html>
